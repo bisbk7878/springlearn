@@ -20,7 +20,7 @@ public class MyController {
 	private CourseService courseService;
 	@GetMapping("/home")
    public String home() {
-	   return "Welcome to my home page";
+	   return "I Welcome You!!!!!";
    }
 	//get the courses
 	@GetMapping("/courses")
@@ -28,9 +28,9 @@ public class MyController {
 		return this.courseService.getCourses();
 	}
 	
-	@GetMapping("/courses/{courseId}")
-	public Course getCourse(@PathVariable String courseId) {
-		return this.courseService.getCourse(Long.parseLong(courseId));
+	@GetMapping("/courses/{Cid}")
+	public Course getCourse(@PathVariable String Cid) {
+		return this.courseService.getCourse(Long.parseLong(Cid));
 	}
 	@PostMapping("/courses")
 	public Course addcourse(@RequestBody Course course)
@@ -44,9 +44,9 @@ public class MyController {
 		return this.courseService.updateCourse(course);
 		
 	}
-	public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String courseId ){
+	public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String Cid ){
 		try {
-			this.courseService.deleteCourse(Long.parseLong(courseId));
+			this.courseService.deleteCourse(Long.parseLong(Cid));
 			return new ResponseEntity<>(HttpStatus.OK);
 			
 		} catch (Exception e) {

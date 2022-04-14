@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+//this is the class where application starts
+
 public class SpringrestApplication {
 
 	public static void main(String[] args) {
